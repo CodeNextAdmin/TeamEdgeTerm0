@@ -4,7 +4,7 @@
  * 
  *   Complete the following loop challenges below. Follow the ToDos
  *   1. IN YOUR PRIME: Declare a while loop that prints all the prime 
- *      numbers between 0 and 1000 (remember the modulo?)
+ *      numbers between 0 and 100 (use the helper function provided)
  *   2. FOUND: use a while loop to search the contents of an array for
  *      the key!
  *   3. BUGGIN: Find out why these while loops don't do what they say 
@@ -40,7 +40,7 @@ while(num <= 10){
 console.log("example counter--> " + num)
 num++
 }
-//-->TODO: Declare a while loop that prints all the prime numbers between 0 and 1000
+//-->TODO: Declare a while loop that prints all the prime numbers between 0 and 100, use test_prime() helper function
 
 
 
@@ -142,3 +142,34 @@ function response(response){
 }
 
 //-->TODO: Challenge! write a secret word to break out of the loop!
+
+
+
+
+
+
+
+//------------ Helper function, do not mess with this part below ---------------??
+
+function test_prime(n)
+{
+
+  if (n===1)
+  {
+    return false;
+  }
+  else if(n === 2)
+  {
+    return true;
+  }else
+  {
+    for(var x = 2; x < n; x++)
+    {
+      if(n % x === 0)
+      {
+        return false;
+      }
+    }
+    return true;  
+  }
+}
