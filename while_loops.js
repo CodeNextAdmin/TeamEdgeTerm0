@@ -215,7 +215,7 @@ function response(response){
 
 
 
-//------------ Helper function, do not mess with this part below ---------------??
+//------------ Helper function, do not mess with this part below ---------------
 
 function test_prime(n)
 {
