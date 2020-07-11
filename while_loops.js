@@ -1,6 +1,6 @@
 /********************************************************************
  *                                                                  
- *  Team Edge Mini-project: WHILE LOOP CHALLENGES
+ *  Team Edge Array Mini-project: WHILE LOOP CHALLENGES
  * 
  *   Complete the following loop challenges below. Follow the ToDos
  *   1. IN YOUR PRIME: Declare a while loop that prints all the prime 
@@ -40,8 +40,20 @@ while(num <= 10){
 console.log("example counter--> " + num)
 num++
 }
-//-->TODO: Declare a while loop that prints all the prime numbers between 0 and 1000
+//-->TODO: Declare a while loop that prints all the prime numbers between 0 and 100
 
+
+
+
+let prime = 0;
+while(prime <=100){
+    
+    //using helper function at the bottom to check primes...
+    if(test_prime(prime)==true){
+        console.log(prime + " is Prime!")
+    }
+    prime ++
+}
 
 
 console.log("------------------- CHALLENGE 2 : FOUND   -------------------")
@@ -51,7 +63,21 @@ let items = ["pencil" , "eraser" , "mirror" , "comb" , "spoon" , "key" , "earrin
 
 //-->TODO: Use a while loop to search the contents of an array for the key! If it exists, print "found the key!"
 
+let isFound = false
 
+while (isFound == false){
+
+
+for(let i = 0 ; i < items.length ; i++){
+
+    if(items[i]== "key"){
+
+        console.log("Found the Key")
+        isFound=true
+    }
+}
+
+}
 
 
 
@@ -64,10 +90,15 @@ console.log("------------------- CHALLENGE 3 : BUGGIN   -------------------")
 
 function evenNumbersToFifty(){
 
-    let num = 50
-    while(num <50){
+    let num = 2
+    while(num <=50){
+       
+        if(num%2==0){
+            console.log("number: " + num)
 
-        console.log("number: " + num)
+        }
+        num++
+        
 
     }
 }
@@ -98,8 +129,16 @@ function pattern(){
       
         array.push(index)
     
-       // console.log(array)
+        console.log(array)
         index++
+    }
+    
+    while(index > 1 ){
+      
+        array.pop(index)
+    
+        console.log(array)
+        index--
     }
 
 }
@@ -115,30 +154,88 @@ console.log("------------------- CHALLENGE 4 : MATH QUIZ   -------------------")
 //         Use this handy boolean to get you started! You will need readline_sync!
 
 let isCorrect = false
+let rand1  = Math.floor(Math.random() * 100); //
+let rand2  = Math.floor(Math.random() * 100);
+
+while(isCorrect==false){
+
+    let answer = READLINE.question(`What is ${rand1} + ${rand2}? >> `)
+    if(answer == rand1+rand2){
+
+        console.log("Correct! ")
+        isCorrect=true
+    }
+
+}
+
+
 
 
 console.log("------------------- CHALLENGE 5 : WHAT AM I?   -------------------")
 
 //-->TODO: Write a game loop that prompts that never stops asking, "Iknow you are a _____, but what am I?"
 //         You are given to starter functions and a loop to get started! 
-//         Notice how one function calls the other and uses the returned value as the input. This is called Recursion! 
 
-let keepAsking = false
+
+let keepAsking = true
+let secretWord = "pickle"
+
 while(keepAsking){
 
- //response(promptUser())
+ response(promptUser())
 }
 
 function promptUser(){
-
   
-
+    let answer = READLINE.question(`what am i?  >> `)
+     return answer
 }
 
 function response(response){
 
-  
+    
+
+    if(response==secretWord){
+        
+        keepAsking =false
+        console.log(`You found the secret word! Byeeee`)
+       
+    } else {
+
+        console.log(`I know you are a ${response} but what am I?`)
+    }
 
 }
 
 //-->TODO: Challenge! write a secret word to break out of the loop!
+
+
+
+
+
+
+
+//------------ Helper function, do not mess with this part below ---------------??
+
+function test_prime(n)
+{
+
+  if (n===1)
+  {
+    return false;
+  }
+  else if(n === 2)
+  {
+    return true;
+  }else
+  {
+    for(var x = 2; x < n; x++)
+    {
+      if(n % x === 0)
+      {
+        return false;
+      }
+    }
+    return true;  
+  }
+}
