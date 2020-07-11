@@ -80,7 +80,7 @@ function logArray(array){
 console.log("------------------- CHALLENGE 4 : EVEN COUNTDOWN ------------------")
 
 
-// This makes a ranbdom number between 0-50
+// This makes a random number between 0-50
 let random = Math.floor(Math.random() * 51); //
 
 //this if/else statement checks if the number is even using the modulo operator (%)
@@ -116,7 +116,7 @@ if(colors.includes(color)){
 //-->TODO Prompt the user to "Guess" if an element is present. Store their response in a varaible
 
 
-//-->TODO Write function to prompt the user and see if the element is present. IF so, print CONGRATULATIONS!
+//-->TODO Write function to prompt the user and see if the element is present. If so, print CONGRATULATIONS!
 
 
 //-->TODO Call your function.
